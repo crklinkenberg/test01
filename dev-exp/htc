@@ -1,0 +1,68 @@
+#Options +Multiviews
+RewriteEngine On
+#RewriteBase /
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule !.*\.php$ %{REQUEST_FILENAME}.php [QSA,L]
+#RewriteRule ^(.*)$ $1.php [NC,L]
+#RewriteRule . /login.php [L]
+RewriteRule ˆlogin$ login.php$1 [L]
+
+#ErrorDocument 404 /mukesh/symcom/error
+#ErrorDocument 500 /mukesh/symcom/connection-failure
+#ErrorDocument 403 /404.html
+#ErrorDocument 400 /404.html
+#ErrorDocument 401 /mukesh/symcom/unauthorised
+
+#<filesMatch ".(css|jpg|jpeg|png|gif|js|ico)$">
+#Header set Cache-Control "max-age=2592000, public"
+#</filesMatch>
+
+#########################START#########################
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php74” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
+
+
+#########################START#########################
+
+
+
+# Deny access to .htaccess Specifics :
+<Files .htaccess>
+Order allow,deny
+Deny from all
+</Files>
+
+<Files appspec.yml>
+Order allow,deny
+Deny from all
+</Files>
+
+# Disable directory browsing :
+Options -Indexes
+
+
+# Deny access to filenames starting with dot(.)  like .htaccess, .htpasswd, .env and others :
+<FilesMatch "^\.">
+Order allow,deny
+Deny from all
+</FilesMatch>
+
+
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+
+#comment

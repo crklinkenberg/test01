@@ -1,0 +1,19 @@
+#Options +Multiviews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
+
+#ErrorDocument 404 /mukesh/symcom/error
+#ErrorDocument 500 /mukesh/symcom/connection-failure
+#ErrorDocument 403 /404.html
+#ErrorDocument 400 /404.html
+#ErrorDocument 401 /mukesh/symcom/unauthorised
+
+<filesMatch ".(css|jpg|jpeg|png|gif|js|ico)$">
+Header set Cache-Control "max-age=2592000, public"
+</filesMatch>
+
+Options -IndexesXXX
+
+
