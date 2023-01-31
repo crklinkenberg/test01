@@ -13,7 +13,7 @@ file_exists_behavior: OVERWRITE
       - directory
 # hooks:
 #   ApplicationStop:
-#     - location: scripts/ApplicationStop.sh
+#     - location: scripts/ApplicationStop.shDever
 #       timeout: 300
 #       runas: ubuntu
 #   BeforeInstall:
