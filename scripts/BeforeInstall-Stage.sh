@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR="/var/www/html/test01"
+DIR="/var/www/html/test02"
 
 #important
 if [ -d "$DIR" ]; then

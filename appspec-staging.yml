@@ -2,25 +2,24 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html/devr02
-file_exists_behavior: OVERWRITE
+    destination: /var/www/html/test02
 
-  - object: /var/www/html/devr02
+  - object: /var/www/html/test02
     owner: ubuntu
     group: ubuntu
     mode: 755
     type:
       - directory
-# hooks:
-#   ApplicationStop:
-#     - location: scripts/ApplicationStop.sh
-#       timeout: 300
-#       runas: ubuntu
-#   BeforeInstall:
-#     - location: scripts/BeforeInstall.sh
-#       timeout: 300
-#       runas: ubuntu
-#   ApplicationStart:
-#     - location: scripts/ApplicationStart.sh
-#       timeout: 300
-#       runas: ubuntu
+hooks:
+  ApplicationStop:
+    - location: scripts/ApplicationStop.sh
+      timeout: 300
+      runas: ubuntu
+  BeforeInstall:
+    - location: scripts/BeforeInstall.sh
+      timeout: 300
+      runas: ubuntu
+  ApplicationStart:
+    - location: scripts/ApplicationStart.sh
+      timeout: 300
+      runas: ubuntu
