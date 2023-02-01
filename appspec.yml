@@ -4,12 +4,6 @@ files:
   - source: /
     destination: /var/www/html/test01
 
-  - object: /var/www/html/test01
-    owner: ubuntu
-    group: ubuntu
-    mode: 755
-    type:
-      - directory
 hooks:
   ApplicationStop:
     - location: scripts/ApplicationStop.sh
