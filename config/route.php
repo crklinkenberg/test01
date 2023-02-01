@@ -27,7 +27,7 @@ date_default_timezone_set('Europe/Vienna');
 // $maxlifetime = ini_get("session.gc_maxlifetime");
 // echo $maxlifetime." --- HR --- "; exit;
 // Site domain
-$absoluteUrl = 'http://com.newrepertory.com/';
+$absoluteUrl = 'http://stage.reference-repertory.com//';
 //$absoluteUrl = 'http://repertorium.loc/';
 
 // full url of a page
@@ -35,7 +35,7 @@ $absoluteUrl = 'http://com.newrepertory.com/';
 $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 // api base url
-$baseApiURL = 'http://com.newrepertory.com/symcom/api/public/v1/';
+$baseApiURL = 'http://stage.reference-repertory.com/symcom/api/public/v1/';
 
 // DB Config details
 $dbHost = 'localhost';
