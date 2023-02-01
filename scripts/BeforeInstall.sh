@@ -1,4 +1,5 @@
 #!/bin/bash
+# echo 'Hello'
 DIR="/var/www/html/test01"
 
 #important
@@ -9,11 +10,7 @@ else
     mkdir ${DIR}
 fi
 
-# Change Ownership of all files and folders
 sudo chmod -R 777 $DIR
-
-# Change Ownership of all files and folders
-sudo chown -R ubuntu:ubuntu $DIR
 
 #rm -r -f -v $DIR
 cp -r -f -v . $DIR
